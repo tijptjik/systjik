@@ -1,3 +1,6 @@
+> **Retired repository:** this document is historical and is not an active
+> deployment guide. See the [retirement notice](README.md) for maintained replacements.
+
 # si provisioning and restore commands
 
 Implemented 2026-10-21. These are explicit commands, not apply hooks. **Do not run the restore sequence on the current healthy server.** Live application databases/configuration remain authoritative.

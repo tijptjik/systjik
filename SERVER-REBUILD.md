@@ -1,3 +1,6 @@
+> **Retired repository:** this document is historical and is not an active
+> deployment guide. See the [retirement notice](README.md) for maintained replacements.
+
 # Rebuilding si: configuration audit and provisioning baseline
 
 Audit date: 2026-10-21. **Implementation follow-up: see [SERVER-BOOTSTRAP.md](SERVER-BOOTSTRAP.md) for the implemented tools, routine-update protections and current commands. The audit below records the initial baseline; its outstanding items are superseded where implemented in that guide.** This is a recovery-oriented baseline, **not yet a tested unattended installer**. `chezetc init` clones the system configuration; applying it and restoring application state are separate operations. The current server has not been broadly reapplied or restarted by this audit.

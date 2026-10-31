@@ -1,3 +1,6 @@
+> **Retired repository:** this document is historical and is not an active
+> deployment guide. See the [retirement notice](../README.md) for maintained replacements.
+
 # Tjikup recipes
 
 Tjikup is a Rust recipe runner in tjikOS. This repository supplies declarative

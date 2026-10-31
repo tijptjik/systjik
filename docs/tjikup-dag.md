@@ -1,3 +1,6 @@
+> **Retired repository:** this document is historical and is not an active
+> deployment guide. See the [retirement notice](../README.md) for maintained replacements.
+
 # System recipe graph
 
 System maintenance is declared in `tjikup/recipes.json` and scheduled by the
