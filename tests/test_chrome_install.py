@@ -17,7 +17,7 @@ class ChromeBootstrapTests(unittest.TestCase):
         return subprocess.check_output([
             'chezmoi', '--config', str(config), '--source', str(ROOT / 'etc'),
             '--persistent-state', str(root / 'state.db'), 'execute-template', '-f',
-            str(ROOT / 'etc/.chezmoiscripts/run_21-install-chrome.fish.tmpl'),
+            str(ROOT / 'etc/.chezmoitemplates/tjikup/run_21-install-chrome.fish.tmpl'),
         ], text=True)
 
     @unittest.skipUnless(shutil.which('chezmoi') and shutil.which('fish'), 'Chezmoi/Fish required')

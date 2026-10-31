@@ -9,7 +9,7 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-HOOK = ROOT / "etc/.chezmoiscripts/run_58-hyprland-gdm-session.fish.tmpl"
+HOOK = ROOT / "etc/.chezmoitemplates/tjikup/run_58-hyprland-gdm-session.fish.tmpl"
 ENTRY = ROOT / "etc/.chezmoitemplates/hyprland-uwsm.desktop"
 
 
@@ -69,7 +69,7 @@ print(f"{stat.S_IMODE(Path(sys.argv[3]).stat().st_mode):o}:" + os.environ.get('T
                     return subprocess.run(command, env=env, text=True, capture_output=True, check=True).stdout
 
                 first = run()
-                if not client or deferred:
+                if not client:
                     self.assertFalse(target.exists())
                     self.assertFalse(calls.exists())
                     self.assertEqual(first, "")

@@ -23,7 +23,7 @@ class TailscalePolicyTests(unittest.TestCase):
                 rendered = subprocess.run([
                     'chezmoi', '--source', str(ROOT / 'etc'), '--config', str(config),
                     '--persistent-state', str(root / 'state.db'), 'execute-template',
-                    '-f', str(ROOT / 'etc/.chezmoiscripts/run_70-enable-tailscaled.fish.tmpl'),
+                    '-f', str(ROOT / 'etc/.chezmoitemplates/tjikup/run_70-enable-tailscaled.fish.tmpl'),
                 ], capture_output=True, text=True)
                 self.assertEqual(rendered.returncode, 0, rendered.stderr)
                 self.assertNotIn('tailscale down', rendered.stdout)
@@ -75,7 +75,7 @@ end
             rendered = subprocess.check_output([
                 'chezmoi', '--source', str(ROOT / 'etc'), '--config', str(config),
                 '--persistent-state', str(root / 'state.db'), 'execute-template',
-                '-f', str(ROOT / 'etc/.chezmoiscripts/run_70-enable-tailscaled.fish.tmpl'),
+                '-f', str(ROOT / 'etc/.chezmoitemplates/tjikup/run_70-enable-tailscaled.fish.tmpl'),
             ], text=True)
             policy = rendered.split('step_header "Tailscale"', 1)[1]
             tail = root / 'tailscale'

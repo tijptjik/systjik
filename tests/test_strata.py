@@ -15,7 +15,7 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'etc/.chezmoitemplates/update-client-cli-releases.py'
-HOOK = ROOT / 'etc/.chezmoiscripts/run_53-install-strata.fish.tmpl'
+HOOK = ROOT / 'etc/.chezmoitemplates/tjikup/run_53-install-strata.fish.tmpl'
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'etc/.chezmoitemplates'))
 spec = importlib.util.spec_from_file_location('strata_updater', SOURCE)
 installer = importlib.util.module_from_spec(spec)

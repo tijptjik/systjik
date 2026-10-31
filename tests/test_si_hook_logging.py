@@ -15,7 +15,7 @@ HOOKS = [
 
 class ServerHookLoggingTests(unittest.TestCase):
     def run_hook(self, name, failure=False, missing=False):
-        script = (REPO / 'etc/.chezmoiscripts' / f'run_{name}.fish.tmpl').read_text()
+        script = (REPO / 'etc/.chezmoitemplates/tjikup' / f'run_{name}.fish.tmpl').read_text()
         script = re.sub(r'{{ include "([^"]+)" }}',
                         lambda m: (REPO / 'etc' / m[1]).read_text(), script)
         script = re.sub(r'{{ (?:if .*?|end) -}}', '', script)

@@ -58,7 +58,7 @@ class ServerAppSectionTests(unittest.TestCase):
         import subprocess
         if not shutil.which('fish'):
             self.skipTest('Fish required')
-        script = (ROOT / 'etc/.chezmoiscripts/run_after_95-si-app-updates.fish.tmpl').read_text()
+        script = (ROOT / 'etc/.chezmoitemplates/tjikup/run_after_95-si-app-updates.fish.tmpl').read_text()
         script = re.sub(r'{{ include "([^"]+)" }}',
                         lambda m: (ROOT / 'etc' / m[1]).read_text(), script)
         script = re.sub(r'{{ (?:if .*?|end) -}}', '', script)

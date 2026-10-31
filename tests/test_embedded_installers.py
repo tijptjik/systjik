@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class EmbeddedInstallerTests(unittest.TestCase):
     def test_python_payload_round_trips_through_fish(self):
         for number in ('54', '56', '57'):
-            hook = next((ROOT / 'etc/.chezmoiscripts').glob(f'run_{number}-*.tmpl'))
+            hook = next((ROOT / 'etc/.chezmoitemplates/tjikup').glob(f'run_{number}-*.tmpl'))
             line = next(line.strip() for line in hook.read_text().splitlines()
                         if 'include ' in line and '"$installer"' in line)
             relative = line.split('include "', 1)[1].split('"', 1)[0]

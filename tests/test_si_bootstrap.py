@@ -43,7 +43,7 @@ class BootstrapTests(unittest.TestCase):
    (root/'backup-manifest.json').write_text(json.dumps({'sqlite':[{'path':'/test.db'}],'mariadbDump':'database-dumps/mariadb.sql'}))
    with self.assertRaises(Exception):restore.validate(root)
  def test_runtime_apply_cannot_run_restore(self):
-  scripts=ROOT/'etc/.chezmoiscripts'
+  scripts=ROOT/'etc/.chezmoitemplates/tjikup'
   for p in scripts.iterdir():self.assertNotIn('restore.py',p.read_text())
   for name in ['run_30-system-update.fish.tmpl','run_40-enable-docker.fish.tmpl','run_90-build-nginx-dav-ext.fish.tmpl']:
    s=(scripts/name).read_text();self.assertNotIn('Server lifecycle step skipped',s)

@@ -43,7 +43,7 @@ class DesktopUserTests(unittest.TestCase):
 
 class CoprTests(unittest.TestCase):
     def test_native_target_is_required_before_install(self):
-        text=(REPO/'etc/.chezmoiscripts/run_10-install-copr-repos.fish.tmpl').read_text()
+        text=(REPO/'etc/.chezmoitemplates/tjikup/run_10-install-copr-repos.fish.tmpl').read_text()
         function=text[text.index('function enable_copr'):text.index('# Retire the font COPR')]
         for available in (True,False):
             harness='''
@@ -65,7 +65,7 @@ function step_run_note_quiet; printf 'RUN %%s\\n' (string join '|' -- $argv); en
                 self.assertNotIn('RUN ',result.stdout)
 
     def test_only_native_release_can_be_selected(self):
-        text = (REPO/'etc/.chezmoiscripts/run_10-install-copr-repos.fish.tmpl').read_text()
+        text = (REPO/'etc/.chezmoitemplates/tjikup/run_10-install-copr-repos.fish.tmpl').read_text()
         function = text[text.index('function copr_native_chroot'):text.index('# Enable only')]
         for targets, expected in [(['fedora-43-x86_64'], None),
                                   (['fedora-43-x86_64', 'fedora-45-x86_64'], 'fedora-45-x86_64'),
@@ -85,7 +85,7 @@ function step_run_note_quiet; printf 'RUN %%s\\n' (string join '|' -- $argv); en
                     self.assertEqual(result.stdout, '')
 
     def test_disabled_configured_repo_is_recognized_exactly(self):
-        text = (REPO/'etc/.chezmoiscripts/run_10-install-copr-repos.fish.tmpl').read_text()
+        text = (REPO/'etc/.chezmoitemplates/tjikup/run_10-install-copr-repos.fish.tmpl').read_text()
         function = text[text.index('function is_copr_configured'):text.index('function copr_native_chroot')]
         for suffix, found in [('', True), (' (disabled)', True), ('-other', False)]:
             with self.subTest(suffix=suffix):
